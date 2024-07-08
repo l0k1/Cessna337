@@ -943,7 +943,31 @@
   </axis>
 
 </aerodynamics>
-
 <system file="crash-detect"/>
+<external_reactions>
+
+  <force name="propulsion/gottagofast" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and elevator is negative, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      
+	<product>
+		<property>the_power_of_family</property>
+		<property>velocities/vc-kts</property>
+		<value>150</value>
+	</product>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+	<location unit="M">
+		<x>-1.85601 </x>
+		<y> 0.00    </y>
+		<z>-0.069293</z>
+	</location>
+    <direction>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </direction>
+  </force>
+</external_reactions>
 
 </fdm_config>

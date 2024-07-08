@@ -224,8 +224,8 @@
         <input>autopilot/internal/nav/filtered-heading-needle-deflection</input>
         <output>autopilot/internal/nav1-course-error-deg</output>
         <config>
-            <Kp>4.5</Kp>
-            <Ki>0.02</Ki>
+            <Kp>90</Kp>
+            <Ki>4</Ki>
         </config>
         <min>-45.0</min>
         <max>45.0</max>
@@ -238,7 +238,7 @@
         <debug>false</debug>
         <type>gain</type>
         <gain>1.0</gain>
-        <input>autopilot/settings/heading-bug-deg</input>
+        <input>instrumentation/nav/radials/selected-deg</input>
         <reference>autopilot/internal/nav1-course-error-deg</reference>
         <output>autopilot/internal/intercept-heading-deg</output>
     </filter>
